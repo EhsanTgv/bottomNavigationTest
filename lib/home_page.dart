@@ -1,3 +1,5 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:bottom_navigation_test/routes/router.gr.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -5,6 +7,19 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return AutoTabsScaffold(
+      appBarBuilder: (_, tabsRouter) => AppBar(
+        backgroundColor: Colors.indigo,
+        title: const Text('FlutterBottomNav'),
+        centerTitle: true,
+        leading: const AutoBackButton(),
+      ),
+      backgroundColor: Colors.indigo,
+      routes: const [
+        PostsRouter(),
+        UsersRouter(),
+        SettingsRouter(),
+      ],
+    );
   }
 }

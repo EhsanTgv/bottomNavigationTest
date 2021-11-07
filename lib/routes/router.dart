@@ -45,7 +45,7 @@ import 'package:bottom_navigation_test/users/users_page.dart';
         ),
         AutoRoute(
           path: 'settings',
-          name: 'SettingsPage',
+          name: 'SettingsRouter',
           page: SettingsPage,
         ),
       ],
