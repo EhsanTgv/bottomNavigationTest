@@ -1,4 +1,6 @@
 import 'package:bottom_navigation_test/data/app_data.dart';
+import 'package:auto_route/auto_route.dart';
+import 'package:bottom_navigation_test/routes/router.gr.dart';
 import 'package:bottom_navigation_test/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +21,9 @@ class PostsPage extends StatelessWidget {
               PostTile(
                 tileColor: posts[i].color,
                 postTitle: posts[i].title,
-                onTileTap: () {},
+                onTileTap: () => context.router.push(SinglePostRoute(
+                  postId: posts[i].id,
+                )),
               ),
           ],
         ),
